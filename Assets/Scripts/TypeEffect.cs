@@ -6,8 +6,9 @@ using UnityEngine.UI;
 
 public class TypeEffect : MonoBehaviour
 {
-    public int CPS; // char per seconds
     public GameObject EndCursor;
+    public int CPS; // char per seconds
+    public bool isTalking;
 
     Text msgText;
     AudioSource audioSource;
@@ -24,8 +25,17 @@ public class TypeEffect : MonoBehaviour
 
     public void SetMsg(string msg)
     {
-        targetMsg = msg;
-        EffectStart();
+        if (isTalking)
+        {
+            CancelInvoke();
+            msgText.text = targetMsg;
+            EffectEnd();
+        }
+        else
+        {
+            targetMsg = msg;
+            EffectStart();
+        }
     }
 
     // Update is called once per frame
@@ -38,6 +48,8 @@ public class TypeEffect : MonoBehaviour
         //Start Animation
         interval = 1.0f / CPS;
         // Debug.Log(interval);
+
+        isTalking = true;
 
         Invoke("Effecting", interval);
     }
@@ -55,8 +67,9 @@ public class TypeEffect : MonoBehaviour
         // Sound
         if (targetMsg[index] != '.' && targetMsg[index] != ' ')
         {
-            audioSource.Play();
+            // audioSource.Play();
         }
+        audioSource.Play();
 
         index++;
 
@@ -66,6 +79,8 @@ public class TypeEffect : MonoBehaviour
 
     void EffectEnd()
     {
+        isTalking = false;
+
         EndCursor.SetActive(true);
     }
 }

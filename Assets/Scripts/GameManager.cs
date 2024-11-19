@@ -34,9 +34,20 @@ public class GameManager : MonoBehaviour
 
     void Talk(int id, bool isNpc)
     {
+        int questTalkIndex = 0;
+        string talkData = "";
+
         // Set Talk Data
-        int questTalkIndex = questManager.GetQuestTalkIndex(id);
-        string talkData = talkManager.GetTalk(id + questTalkIndex, talkIndex);
+        if (talk.isTalking)
+        {
+            talk.SetMsg("");
+            return;
+        }
+        else
+        {
+            questTalkIndex = questManager.GetQuestTalkIndex(id);
+            talkData = talkManager.GetTalk(id + questTalkIndex, talkIndex);
+        }
 
         // End Talk
         if(talkData == null)
