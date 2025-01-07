@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.unity.2d.aseprite": "1.1.7",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap.extras": "file:C:/Users/rkfka/Downloads/2d-extras-2.2.2",
     "com.unity.collab-proxy": "2.4.3",
