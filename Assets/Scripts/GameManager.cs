@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public Text questText;
     public int talkIndex;
     public bool isAction=false;
+    public bool activeMenu=false;
 
     // Make invisible first
     private void Start()
@@ -35,14 +36,9 @@ public class GameManager : MonoBehaviour
         // Sub Menu
         if (Input.GetButtonDown("Cancel"))
         {
-            if (menuSet.activeSelf)
-            {
-                menuSet.SetActive(false);
-            }
-            else
-            {
-                menuSet.SetActive(true);
-            }
+            activeMenu = !activeMenu;
+            menuSet.SetActive(activeMenu);
+            
         }
     }
 
