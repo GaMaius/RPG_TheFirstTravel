@@ -1,8 +1,8 @@
 # RPG_TheFirstTravel
- The first origin RPG in CSHS
+ The first origin RPG in PNU
 
 
-This Project is made by CSHS students
+This Project is made by PNU student
 The last project before graduation
 
 Play fun.
