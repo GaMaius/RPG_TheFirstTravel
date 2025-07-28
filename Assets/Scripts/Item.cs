@@ -24,6 +24,6 @@ public class Item
         {
             isUsed = eft.ExecuteRole();
         }
-        return false;
+        return isUsed;
     }
 }
