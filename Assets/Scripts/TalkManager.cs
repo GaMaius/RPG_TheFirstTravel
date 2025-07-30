@@ -32,7 +32,7 @@ public class TalkManager : MonoBehaviour
 
         // Talk Data
         // NPC A : 1000 , NPC B : 2000
-        // Box : 100 , Rock : 200, Dest : 3000
+        // Box : 100 , Rock : 200, Desk : 300, MagicTable : 400
         talkData.Add(1000, new string[] { "안녕?=0", 
                                           "이곳에 처음 왔구나?=1", 
                                           "한 번 둘러보도록 해.=1" });
@@ -40,6 +40,7 @@ public class TalkManager : MonoBehaviour
         talkData.Add(100, new string[] { "평범한 나무상자다." });
         talkData.Add(200, new string[] { "바위다. 단단하다." });
         talkData.Add(300, new string[] { "무언가가 적혀있는 종이가 널브러져있는 책상이다." });
+        talkData.Add(400, new string[] { "마법을 제작할 수 있을 것 같다." });
 
         // Quest Talk
         talkData.Add(1000 + 10, new string[] { "어서와.=0",
